@@ -34,7 +34,21 @@ get_header(); ?>
                     <div class="post-container">
                         <div class="nav-container prev-post-container">
                             <div class="nav-link prev-post-link">
-                                <?php previous_post_link('%link', 'previous post in category', TRUE); ?>
+                                <?php
+                                $prev_post = get_previous_post(true);
+                                $prev_post_attachments = get_posts(array(
+                                    'post_type' => 'attachment',
+                                    'numberposts' => -1,
+                                    'post_status' => null,
+                                    'post_parent' => $prev_post->ID
+                                ));
+                                $prev_post_image = $prev_post_attachments ? wp_get_attachment_image_src($prev_post_attachments[0]->ID, 'thumbnail') : 'no attachment image in this post';
+                                //print_r($prev_post);
+
+                                $toto = '<img src="'. $prev_post_image[0] .'" alt="'. $prev_post->post_title .'">';
+                                ?>
+
+                                <?php previous_post_link('%link', $toto, TRUE); ?>
                             </div>
                         </div>
 
@@ -74,7 +88,21 @@ get_header(); ?>
 
                         <div class="nav-container next-post-container">
                             <div class="nav-link next-post-link">
-                                <?php next_post_link('%link', 'next post in category', TRUE); ?>
+                                <?php
+                                $next_post = get_next_post(true);
+                                $next_post_attachments = get_posts(array(
+                                    'post_type' => 'attachment',
+                                    'numberposts' => -1,
+                                    'post_status' => null,
+                                    'post_parent' => $next_post->ID
+                                ));
+                                $next_post_image = $next_post_attachments ? wp_get_attachment_image_src($next_post_attachments[0]->ID, 'thumbnail') : 'no attachment image in this post';
+                                //print_r($prev_post);
+
+                                $toto2 = '<img src="'. $next_post_image[0] .'" alt="'. $next_post->post_title .'">';
+                                ?>
+
+                                <?php next_post_link('%link', $toto2, TRUE); ?>
                             </div>
                         </div>
                     </div>
