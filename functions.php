@@ -312,9 +312,12 @@ add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
+
+show_admin_bar( false );
 function twentyseventeen_excerpt_more( $link ) {
 	if ( is_admin() ) {
-		return $link;
+
+        return $link;
 	}
 
 	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
@@ -525,3 +528,21 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+
+// ADMIN : shows a meta box containing the attached image
+add_action( 'add_meta_boxes', function() {
+    add_meta_box( 'att_thumb_display', 'Attached images (use "add media" to change or remove this image)', function( $post ) {
+        $args = array(
+            'post_type' => 'attachment',
+            'post_mime_type' => 'image',
+            'post_parent' => $post->ID
+        );
+
+        echo '<ul>';
+        foreach( get_posts( $args ) as $image) {
+            echo '<li><img src="' . wp_get_attachment_thumb_url( $image->ID ) . '" /></li>';
+        }
+        echo '</ul>';
+    }, 'post' );
+});

@@ -12,32 +12,81 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div class="wrap single">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
 
-			<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/post/content', get_post_format() );
+                <?php
+                /* Start the Loop */
+                while (have_posts()) : the_post();
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+                    // get post image
+                    $attachments = get_posts(array(
+                        'post_type' => 'attachment',
+                        'numberposts' => -1,
+                        'post_status' => null,
+                        'post_parent' => $post->ID
+                    ));
+                    $post_image = $attachments ? wp_get_attachment_image($attachments[0]->ID, 'medium') : 'no attachment image in this post';
 
-					the_post_navigation( array(
-						'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-						'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-					) );
+                    ?>
+                    <div class="post-container">
+                        <div class="nav-container prev-post-container">
+                            <div class="nav-link prev-post-link">
+                                <?php previous_post_link('%link', 'previous post in category', TRUE); ?>
+                            </div>
+                        </div>
 
-				endwhile; // End of the loop.
-			?>
+                        <div class="post-content">
+                            <!-- IMAGE POST -->
+                            <div class="image-container">
+                                <a href="/" class="button-back">
+                                    &lt; retour à l'accueil
+                                </a>
+                                <div class="image-post">
+                                    <?php echo $post_image; ?>
+                                </div>
+                                <a href="#" class="button">
+                                    more details
+                                </a>
+                            </div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+                            <!-- TEXT CONTENT -->
+                            <div class="content-container">
+                                <div class="post-number">
+                                    &lt;01&gt;
+                                </div>
+                                <h1 class="post-title">
+                                    <?php the_title(); ?>
+                                </h1>
+
+                                <div class="the-content">
+                                    <?php the_content(); ?>
+                                </div>
+
+                                <a href="#" class="button button-big bg-2">
+                                    commander
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="nav-container next-post-container">
+                            <div class="nav-link next-post-link">
+                                <?php next_post_link('%link', 'next post in category', TRUE); ?>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <?php
+
+                endwhile; // End of the loop.
+                ?>
+
+            </main><!-- #main -->
+        </div><!-- #primary -->
+    </div><!-- .wrap -->
 
 <?php get_footer();

@@ -15,39 +15,60 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
 
-<?php wp_head(); ?>
+    <?php wp_head(); ?>
+
+    <!-- google font "Josefin Sans" -->
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600,700,400italic,500italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    <!-- google font "Crimson Text" -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet">
+
+
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header" role="banner">
+        <div class="header-content">
+            <ul class="menu menu-categories">
+                <?php wp_list_categories(array(
+                    // todo order by custom
+                    'title_li' => __(''), // title
+                    'orderby' => 'name',
+                    'show_count' => false
+                )); ?>
+            </ul>
 
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+            <ul class="menu menu-contact">
+                <li>
+                    <a href="#">
+                        instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        biographie
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        contact
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
+    </header><!-- #masthead -->
 
-	</header><!-- #masthead -->
 
-	<?php
-	// If a regular post or page, and not the front page, show the featured image.
-	if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) ) :
-		echo '<div class="single-featured-image-header">';
-		the_post_thumbnail( 'twentyseventeen-featured-image' );
-		echo '</div><!-- .single-featured-image-header -->';
-	endif;
-	?>
-
-	<div class="site-content-contain">
-		<div id="content" class="site-content">
+    <div class="site-content-contain">
+        <div id="content" class="site-content">
