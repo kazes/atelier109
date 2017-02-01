@@ -86,7 +86,7 @@ get_header(); ?>
                                     <div class="pattern"></div>
                                     <?php echo $post_image; ?>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button JS_toggler" data-toggler-group="popin" data-toggler-id="popin-inscription">
                                     more details
                                 </a>
                             </div>
@@ -133,5 +133,47 @@ get_header(); ?>
             </main><!-- #main -->
         </div><!-- #primary -->
     </div><!-- .wrap -->
+    <div class="JS_item_toggler popin" data-toggler-group="popin" data-toggler-itemid="popin-inscription">
+        <!-- CLOSE POPIN -->
+        <div class="close JS_toggler" data-toggler-group="popin" data-toggler-id="popin-inscription"></div>
 
+        <!-- POPIN CONTENT -->
+        <div class="popin-inside">
+            <form action="#">
+                <h1 class="form-title">
+                    inscription au salon&nbsp;:&nbsp;confirmation d'inscription à l'évènement
+                </h1>
+                <p class="form-intro">
+                    Pour confirmer votre inscription, vérifiez l'exactitude de vos informations personnelles<br>
+                    ( modifiables depuis votre page "mon profil" )
+                </p>
+                <p class="form-item">
+                    <label class="form-label" for="surname">
+                        Prénom *
+                    </label>
+                    <input type="text" id="surname" value="Pierre" readonly="readonly">
+                </p>
+                <p class="form-item">
+                    <label class="form-label" for="name">
+                        Nom *
+                    </label>
+                    <input type="text" id="name" value="Ma7tel" readonly="readonly">
+                </p>
+                <p class="form-item">
+                    <label class="form-label" for="email">
+                        Adresse email
+                    </label>
+                    <input type="email" id="email" value="pierre.martel@gmail.com" readonly="readonly">
+                </p>
+
+                <input class="btn btn-gradient-full mrm mbm" type="submit" value="confirmer mon inscription">
+
+                <p class="btn btn-gradient-stroke JS_toggler" data-toggler-group="popin" data-toggler-id="popin-inscription">
+                <span class="btn-inside">
+                    annuler
+                </span>
+                </p>
+            </form>
+        </div>
+    </div>
 <?php get_footer();

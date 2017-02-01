@@ -1,6 +1,9 @@
 // on page load
-$(window).on('load', function () {
 
-    console.log('coucou laaaami');
+var toggler = require("./libs/toggler");
+
+$(window).on('load', function () {
+toggler.default();
+    console.log('coucou laaaami', toggler);
     console.log('coucou laaaami');
 });
