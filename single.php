@@ -16,8 +16,21 @@ get_header(); ?>
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
 
-
                 <?php
+                $cat_name = get_the_category($post->ID)[0]->cat_name;
+                $all_posts = query_posts('post_type=post&orderby=date&order=ASCe&category_name=' . $cat_name);
+
+                // find index number of the post in its category
+                $post_index = 0;
+                foreach ($all_posts as $p){
+                    $post_index++;
+                    if($p->ID === $post->ID){
+                        break;
+                    }
+                }
+                // reset the global $post array before using it in the loop
+                wp_reset_query();
+
                 /* Start the Loop */
                 while (have_posts()) : the_post();
 
@@ -45,7 +58,7 @@ get_header(); ?>
                                 $prev_post_image = $prev_post_attachments ? wp_get_attachment_image_src($prev_post_attachments[0]->ID, 'thumbnail') : 'no attachment image in this post';
                                 //print_r($prev_post);
 
-                                $toto = '<img src="'. $prev_post_image[0] .'" alt="'. $prev_post->post_title .'">';
+                                $toto = '<img src="' . $prev_post_image[0] . '" alt="' . $prev_post->post_title . '">';
                                 ?>
 
                                 <?php previous_post_link('%link', $toto, TRUE); ?>
@@ -69,7 +82,7 @@ get_header(); ?>
                             <!-- TEXT CONTENT -->
                             <div class="content-container">
                                 <div class="post-number">
-                                    &lt;01&gt;
+                                    &lt;<?php echo $post_index; ?>&gt;
                                 </div>
                                 <h1 class="post-title">
                                     <?php the_title(); ?>
@@ -99,7 +112,7 @@ get_header(); ?>
                                 $next_post_image = $next_post_attachments ? wp_get_attachment_image_src($next_post_attachments[0]->ID, 'thumbnail') : 'no attachment image in this post';
                                 //print_r($prev_post);
 
-                                $toto2 = '<img src="'. $next_post_image[0] .'" alt="'. $next_post->post_title .'">';
+                                $toto2 = '<img src="' . $next_post_image[0] . '" alt="' . $next_post->post_title . '">';
                                 ?>
 
                                 <?php next_post_link('%link', $toto2, TRUE); ?>
