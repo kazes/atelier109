@@ -83,6 +83,7 @@ get_header(); ?>
                                     &lt; retour à l'accueil
                                 </a>
                                 <div class="image-post">
+                                    <div class="pattern"></div>
                                     <?php echo $post_image; ?>
                                 </div>
                                 <a href="#" class="button">

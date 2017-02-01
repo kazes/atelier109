@@ -1,0 +1,29 @@
+{
+  "name": "atelier109",
+  "description": "site",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "webpack --progress --colors --watch --config webpack.config.dev.js | grunt fw",
+    "wp": "webpack --config webpack.config.prod.js",
+    "build": "npm run wp && grunt s && grunt build",
+    "build_dev": "webpack --config webpack.config.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.3.4",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "cssnano": "^3.7.0",
+    "grunt": "^0.4.5",
+    "grunt-combine-media-queries": "^1.0.20",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^1.2.0",
+    "webpack": "^1.13.1"
+  }
+}
