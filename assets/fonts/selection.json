@@ -29,6 +29,33 @@
       "setIdx": 0,
       "setId": 3,
       "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M572.774 535.962l345.6-345.6-36.762-36.762-345.651 345.6-345.6-345.6-36.762 36.762 345.6 345.6-345.6 345.651 36.762 36.762 345.6-345.6 348.877 348.826 36.762-36.762z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "close-menu"
+        ],
+        "defaultCode": 59664,
+        "grid": 0
+      },
+      "attrs": [],
+      "properties": {
+        "id": 18,
+        "order": 5,
+        "ligatures": "",
+        "prevSize": 32,
+        "code": 59664,
+        "name": "close"
+      },
+      "setIdx": 1,
+      "setId": 2,
+      "iconIdx": 16
     }
   ],
   "height": 1024,

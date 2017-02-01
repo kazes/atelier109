@@ -147,7 +147,7 @@ get_header(); ?>
                 <div class="popin-content">
                     <div class="popin-ground">
                         <span class="popin-close JS_toggler active" data-toggler-id="popin-more" data-toggler-group="popin" data-toggler-action="close">
-                            <i class="icon-close-menu"></i>
+                            <i class="icon-close"></i>
                         </span>
 
                         lol
