@@ -28,8 +28,14 @@ get_header(); ?>
                         break;
                     }
                 }
+
                 // reset the global $post array before using it in the loop
                 wp_reset_query();
+
+                // pan to (add extra zeros)
+                if(strlen(strval($post_index)) < 2){
+                    $post_index = "0" . strval($post_index);
+                }
 
                 /* Start the Loop */
                 while (have_posts()) : the_post();
