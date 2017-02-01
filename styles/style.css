@@ -1,46 +1,152 @@
-/* POPINS (works with js toggler) */
-
 .popin {
-	display: none;
-	overflow: hidden;
+	overflow: auto;
+	position: fixed;
+	right: 100%;
+	visibility: hidden;
+	z-index: -1;
+	transition: z-index 0ms 1s;
 }
 
-.popin .popin-inside {
-	background: white;
-	position: relative;
-	z-index: 102;
-	padding: 48px 40px 50px 40px;
-	min-width: 320px;
-	max-width: 100%;
+.popin,
+.popin .mask {
+	bottom: 0;
+	left: 0;
+	top: 0;
+}
+
+.popin .mask {
+	background: transparent;
+	content: "";
+	position: absolute;
+	right: 0;
+	transition: all 0.5s cubic-bezier(0, 0, 0, 0.99);
+	will-change: background;
 }
 
 .popin.active {
-	display: block;
-	align-items: center;
-	justify-content: center;
-	position: fixed;
-	z-index: 101;
-	left: 0;
+	visibility: visible;
+	z-index: 105;
+	transition: z-index 0ms;
 	right: 0;
-	top: 48px;
-	bottom: 0;
+}
+
+.popin.active .mask {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.popin .btn-close {
+	right: 1%;
+	top: 15px;
+	border: 1px solid #a0a0a0;
+}
+
+.popin .content-scroll {
 	overflow: auto;
+	height: 100%;
+	pointer-events: none;
+	position: relative;
 }
 
-.popin .close,
-.popin:before {
-	content: '';
-	position: fixed;
-	left: 0;
-	top: 0;
-	right: 0;
+.popin .content-scroll.no-pdt {
+	padding-top: 0;
+}
+
+.popin .content-wrapper {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.popin .popin-ground {
+	background: #fff;
+	pointer-events: all;
+	width: 100vw;
+	margin: 0 auto;
+	padding: 50px;
+	text-align: left;
+	position: relative;
+	width: 500px;
+	min-height: 394px;
+}
+
+.popin-add-list .popin-ground {
+	padding: 0;
+	padding-bottom: 80px;
+	height: auto !important;
+}
+
+.popin-add-list .inner-text {
+	padding: 50px 50px 0;
+}
+
+.popin-add-list .block-input {
+	background-color: transparent;
+	border: none;
+	padding: 15px 0 !important;
+}
+
+.popin-add-list .open-add-list .list-deploy {
+	padding: 0;
+}
+
+.popin-add-list .btn-medium {
+	background-color: transparent;
+}
+
+.popin-add-list .btn-medium:hover {
+	background-color: #ff9600;
+}
+
+.popin-add-list .btn-medium .icon-add:before {
+	font-size: 25px;
+}
+
+.popin-content {
+	display: table-cell;
+	border-radius: 20px;
+	margin: auto;
+	opacity: 0;
+	overflow: hidden;
+	text-align: center;
+	transition: all 0.7s cubic-bezier(0, 0, 0, 0.99);
+	-ms-transform: scale(0.95);
+	transform: scale(0.95);
+	vertical-align: middle;
+	width: 100%;
+	will-change: border-radius,transform,opacity;
+}
+
+.popin.active .popin-content {
+	border-radius: 0;
+	opacity: 1;
+	transition: all 0.5s cubic-bezier(0, 0, 0, 0.99);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+.popin-close {
 	bottom: 0;
-	z-index: 101;
+	color: #202020;
+	cursor: pointer;
+	height: 15px;
+	line-height: .7;
+	padding: 0;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 15px;
 }
 
-.popin:before {
-	background: #000000;
-	opacity: 0.6;
+.popin-close .icon-close-menu {
+	margin: 0;
+}
+
+.popin-close .icon-close-menu:before {
+	font-size: 20px;
+}
+
+.open-popin {
+	cursor: pointer;
 }
 
 /*
@@ -429,18 +535,4 @@ a:hover {
 }
 
 /*# sourceMappingURL=style.css.map */
-
-@media (max-width: 600px) {
-
-.popin .popin-inside {
-	min-width: 500px;
-	max-width: 65%;
-}
-
-.popin.active {
-	display: flex;
-	top: 0;
-}
-
-}
 
