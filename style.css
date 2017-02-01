@@ -55,6 +55,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     margin: 0;
     padding: 0;
     vertical-align: baseline;
+    box-sizing: border-box;
 }
 
 input {
@@ -194,6 +195,7 @@ a:hover {
 /* HEADER */
 #masthead {
     position: fixed;
+    z-index: 1;
     top: 0;
     right: 0;
     left: 0;
@@ -201,15 +203,14 @@ a:hover {
 
 .header-content {
     padding-top: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    position: relative;
     max-width: 1280px;
     margin: auto;
 
 }
 
 .menu {
+    position: absolute;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -219,9 +220,11 @@ a:hover {
 }
 
 .menu-categories {
+    left: 0;
 }
 
 .menu-contact {
+    right: 0;
     text-align: right;
 }
 
@@ -275,6 +278,7 @@ a:hover {
 .next-post-link {
     padding-right: 35px;
 }
+
 .next-post-link .arrow {
     left: 35%;
 }
@@ -286,12 +290,19 @@ a:hover {
     font-weight: 400;
 }
 
+.image-container {
+    width: 53.4%;
+}
+
 .image-post img {
     display: block;
+    width: 100%;
+    height: auto;
     margin-bottom: 20px;
 }
 
 .content-container {
+    width: 46.6%;
     padding-left: 45px;
     display: flex;
     justify-content: center;
