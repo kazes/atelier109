@@ -37,6 +37,19 @@ get_header(); ?>
                     $post_index = "0" . strval($post_index);
                 }
 
+                function getAttachedImageFromPost($the_post, $format = 'thumbnail'){
+                    $post_attachments = get_posts(array(
+                        'post_type' => 'attachment',
+                        'numberposts' => -1,
+                        'post_status' => null,
+                        'post_parent' => $the_post->ID
+                    ));
+                    $img_src = $post_attachments ? wp_get_attachment_image_src($post_attachments[0]->ID, $format) : 'no attachment image in this post';
+                    //print_r($prev_post);
+
+                    return '<img src="' . $img_src[0] . '" alt="' . $the_post->post_title . '">';
+                }
+
                 /* Start the Loop */
                 while (have_posts()) : the_post();
 
@@ -55,19 +68,11 @@ get_header(); ?>
                             <div class="nav-link prev-post-link">
                                 <?php
                                 $prev_post = get_previous_post(true);
-                                $prev_post_attachments = get_posts(array(
-                                    'post_type' => 'attachment',
-                                    'numberposts' => -1,
-                                    'post_status' => null,
-                                    'post_parent' => $prev_post->ID
-                                ));
-                                $prev_post_image = $prev_post_attachments ? wp_get_attachment_image_src($prev_post_attachments[0]->ID, 'thumbnail') : 'no attachment image in this post';
-                                //print_r($prev_post);
-
-                                $toto = '<img src="' . $prev_post_image[0] . '" alt="' . $prev_post->post_title . '">';
+                                if($prev_post){
+                                    $prev_post_image = getAttachedImageFromPost($prev_post);
+                                    previous_post_link('%link', '<span class="arrow icon-prev"></span>' . $prev_post_image, true);
+                                }
                                 ?>
-
-                                <?php previous_post_link('%link', $toto, TRUE); ?>
                             </div>
                         </div>
 
@@ -109,19 +114,11 @@ get_header(); ?>
                             <div class="nav-link next-post-link">
                                 <?php
                                 $next_post = get_next_post(true);
-                                $next_post_attachments = get_posts(array(
-                                    'post_type' => 'attachment',
-                                    'numberposts' => -1,
-                                    'post_status' => null,
-                                    'post_parent' => $next_post->ID
-                                ));
-                                $next_post_image = $next_post_attachments ? wp_get_attachment_image_src($next_post_attachments[0]->ID, 'thumbnail') : 'no attachment image in this post';
-                                //print_r($prev_post);
-
-                                $toto2 = '<img src="' . $next_post_image[0] . '" alt="' . $next_post->post_title . '">';
+                                if($next_post){
+                                    $next_post_image = getAttachedImageFromPost($next_post);
+                                    next_post_link('%link', '<span class="arrow icon-next"></span>' . $next_post_image, true);
+                                }
                                 ?>
-
-                                <?php next_post_link('%link', $toto2, TRUE); ?>
                             </div>
                         </div>
                     </div>
