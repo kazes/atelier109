@@ -535,3 +535,13 @@ add_action('add_meta_boxes', function () {
         echo '</ul>';
     }, 'post');
 });
+
+
+
+// contact form 7 - add dynamic field
+function cf7_add_post_url(){
+    global $post;
+    return $post->guid;
+}
+
+add_shortcode('CF7_ADD_POST_URL', 'cf7_add_post_url');

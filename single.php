@@ -50,17 +50,18 @@ get_header(); ?>
                     return '<img src="' . $img_src[0] . '" alt="' . $the_post->post_title . '">';
                 }
 
+                // get post image
+                $attachments = get_posts(array(
+                    'post_type' => 'attachment',
+                    'numberposts' => -1,
+                    'post_status' => null,
+                    'post_parent' => $post->ID
+                ));
+                $post_image = $attachments ? wp_get_attachment_image($attachments[0]->ID, 'medium') : 'no attachment image in this post';
+                $post_image_thumb = $attachments ? wp_get_attachment_image($attachments[0]->ID, 'thumbnail') : 'no attachment image in this post';
+
                 /* Start the Loop */
                 while (have_posts()) : the_post();
-
-                    // get post image
-                    $attachments = get_posts(array(
-                        'post_type' => 'attachment',
-                        'numberposts' => -1,
-                        'post_status' => null,
-                        'post_parent' => $post->ID
-                    ));
-                    $post_image = $attachments ? wp_get_attachment_image($attachments[0]->ID, 'medium') : 'no attachment image in this post';
 
                     ?>
                     <div class="post-container">
@@ -135,22 +136,42 @@ get_header(); ?>
     </div><!-- .wrap -->
 
 
-
-    <div class="popin popin-add-list JS_item_toggler" data-toggler-itemid="popin-more" data-toggler-group="popin">
+    <!-- POPIN CONTACT -->
+    <div class="popin JS_item_toggler" data-toggler-itemid="popin-more" data-toggler-group="popin">
 
         <!-- MASK -->
         <div class="mask JS_toggler active" data-toggler-id="popin-more" data-toggler-group="popin" data-toggler-action="close"></div>
 
-
+        <!-- POPIN CONTENT -->
         <div class="content-scroll">
             <div class="content-wrapper">
                 <div class="popin-content">
                     <div class="popin-ground">
+                        <!-- CLOSE -->
                         <span class="popin-close JS_toggler active" data-toggler-id="popin-more" data-toggler-group="popin" data-toggler-action="close">
                             <i class="icon-close"></i>
                         </span>
 
-                        lol
+                        <!-- TITLE -->
+                        <h1 class="popin-title">
+                            Votre création atelier 109 est réalisée sur-mesure
+                        </h1>
+
+                        <div class="contact-container">
+                            <div class="thumbnail">
+                                <?php echo $post_image_thumb; ?>
+                            </div>
+
+                            <div class="message">
+                                <p class="intro">
+                                    Parlez moi de vos envies de couleurs et de tissus. Je vous enverrai une proposition personnalisée.
+                                </p>
+                                <!-- FORM -->
+                                <?php echo do_shortcode( '[contact-form-7 id="49" title="Contact form 1"]' ); ?>
+                            </div>
+
+                        </div>
+
 
                     </div>
                 </div>
@@ -158,3 +179,4 @@ get_header(); ?>
         </div>
     </div>
 <?php get_footer();
+

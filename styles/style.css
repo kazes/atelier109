@@ -51,54 +51,44 @@
 	padding-top: 0;
 }
 
+.contact-container {
+	display: flex;
+}
+
+.contact-container .thumbnail {
+	padding-top: 2px;
+}
+
+.contact-container .thumbnail img {
+	margin-right: 50px;
+}
+
 .popin .content-wrapper {
 	display: table;
 	height: 100%;
 	width: 100%;
 }
 
+.popin .intro {
+	letter-spacing: 0;
+	font-family: 'Crimson Text', serif;
+	text-transform: none;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 16px;
+	padding-bottom: 20px;
+}
+
 .popin .popin-ground {
 	background: #fff;
 	pointer-events: all;
-	width: 100vw;
 	margin: 0 auto;
-	padding: 50px;
+	padding: 43px 50px;
 	text-align: left;
 	position: relative;
-	width: 500px;
+	width: 80vw;
 	min-height: 394px;
-}
-
-.popin-add-list .popin-ground {
-	padding: 0;
-	padding-bottom: 80px;
 	height: auto !important;
-}
-
-.popin-add-list .inner-text {
-	padding: 50px 50px 0;
-}
-
-.popin-add-list .block-input {
-	background-color: transparent;
-	border: none;
-	padding: 15px 0 !important;
-}
-
-.popin-add-list .open-add-list .list-deploy {
-	padding: 0;
-}
-
-.popin-add-list .btn-medium {
-	background-color: transparent;
-}
-
-.popin-add-list .btn-medium:hover {
-	background-color: #ff9600;
-}
-
-.popin-add-list .btn-medium .icon-add:before {
-	font-size: 25px;
 }
 
 .popin-content {
@@ -113,7 +103,7 @@
 	transform: scale(0.95);
 	vertical-align: middle;
 	width: 100%;
-	will-change: border-radius,transform,opacity;
+	will-change: border-radius, transform, opacity;
 }
 
 .popin.active .popin-content {
@@ -122,6 +112,60 @@
 	transition: all 0.5s cubic-bezier(0, 0, 0, 0.99);
 	-ms-transform: scale(1);
 	transform: scale(1);
+}
+
+.form-line {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 25px;
+}
+
+.form-line br {
+	display: none;
+}
+
+.form-line input,
+.form-line select,
+.form-line textarea {
+	width: 100%;
+}
+
+.form-line .wpcf7-form-control-wrap {
+	flex-basis: 47%;
+}
+
+.form-line.form-date {
+	flex-direction: column;
+}
+
+.form-line.form-textarea {
+	padding-top: 25px;
+}
+
+.form-line.form-textarea textarea {
+	height: 130px;
+}
+
+.form-line.form-textarea .wpcf7-form-control-wrap {
+	flex-basis: 100%;
+}
+
+.form-line.form-email .wpcf7-form-control-wrap {
+	flex-basis: 70%;
+}
+
+.form-line.form-submit .post-url {
+	display: none;
+}
+
+.popin-title {
+	font-family: 'Josefin Sans', sans-serif;
+	text-transform: uppercase;
+	font-weight: 400;
+	line-height: 40px;
+	font-size: 36px;
+	letter-spacing: 6px;
+	padding-bottom: 40px;
 }
 
 .popin-close {
@@ -215,6 +259,20 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	box-sizing: border-box;
 }
 
+/* STRUCTURE */
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 600;
+	font-size: 12px;
+	height: 100%;
+	line-height: 20px;
+	color: #000;
+	background: #fff;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
 input {
 	height: auto;
 }
@@ -225,42 +283,21 @@ form {
 	border: 0;
 }
 
-ins,
-abbr,
-acronym {
-	text-decoration: none;
-	border: 0;
-	font-style: normal;
-}
-
-a:hover ins,
-a:hover abbr,
-a:hover acronym {
-	text-decoration: underline;
-}
-
-address {
-	font-style: normal;
-}
-
 ul {
 	list-style: none;
-}
-
-q:before,
-q:after {
-	content: '';
-}
-
-small {
-	font-size: 0.9em;
 }
 
 input,
 select,
 textarea,
 button {
-	font: 1em Arial, Verdana, Helvetica, sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 14px;
+	letter-spacing: 2px;
+	padding: 5px 5px;
+	border: 1px solid black;
 }
 
 input,
@@ -290,26 +327,12 @@ button::-moz-focus-inner { /*firefox extra padding removed*/
 	padding: 0;
 }
 
-input.submit {
+input[type=submit] {
 	width: auto !important;
 	height: auto !important;
 	cursor: pointer !important;
 	border: 0 !important;
 	overflow: visible;
-}
-
-/* STRUCTURE */
-
-body {
-	font-family: 'Josefin Sans', sans-serif;
-	font-weight: 600;
-	font-size: 12px;
-	height: 100%;
-	line-height: 20px;
-	color: #000;
-	background: #fff;
-	letter-spacing: 2px;
-	text-transform: uppercase;
 }
 
 /* PAGE */

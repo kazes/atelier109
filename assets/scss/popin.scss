@@ -8,7 +8,7 @@
     transition: z-index 0ms 1s
 }
 
-.popin,.popin .mask {
+.popin, .popin .mask {
     bottom: 0;
     left: 0;
     top: 0
@@ -19,7 +19,7 @@
     content: "";
     position: absolute;
     right: 0;
-    transition: all .5s cubic-bezier(0,0,0,.99);
+    transition: all .5s cubic-bezier(0, 0, 0, .99);
     will-change: background
 }
 
@@ -31,7 +31,7 @@
 }
 
 .popin.active .mask {
-    background: rgba(0,0,0,.8)
+    background: rgba(0, 0, 0, .8)
 }
 
 .popin .btn-close {
@@ -51,56 +51,48 @@
     padding-top: 0
 }
 
+.contact-container {
+    display: flex;
+
+    .thumbnail {
+        padding-top: 2px;
+
+        img {
+            margin-right: 50px;
+        }
+    }
+
+    .message {
+    }
+}
+
 .popin .content-wrapper {
     display: table;
     height: 100%;
     width: 100%
 }
 
+.popin .intro {
+    letter-spacing: 0;
+    font-family: 'Crimson Text', serif;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 20px;
+}
 .popin .popin-ground {
     background: #fff;
     pointer-events: all;
-    width: 100vw;
     margin: 0 auto;
-    padding: 50px;
+    padding: 43px 50px;
     text-align: left;
     position: relative;
 
-
-    width: 500px;
+    width: 80vw;
     min-height: 394px;
-}
 
-.popin-add-list .popin-ground {
-    padding: 0;
-    padding-bottom: 80px;
-    height: auto!important
-}
-
-.popin-add-list .inner-text {
-    padding: 50px 50px 0
-}
-
-.popin-add-list .block-input {
-    background-color: transparent;
-    border: none;
-    padding: 15px 0!important
-}
-
-.popin-add-list .open-add-list .list-deploy {
-    padding: 0
-}
-
-.popin-add-list .btn-medium {
-    background-color: transparent
-}
-
-.popin-add-list .btn-medium:hover {
-    background-color: #ff9600
-}
-
-.popin-add-list .btn-medium .icon-add:before {
-    font-size: 25px
+    height: auto !important
 }
 
 .popin-content {
@@ -110,22 +102,75 @@
     opacity: 0;
     overflow: hidden;
     text-align: center;
-    transition: all .7s cubic-bezier(0,0,0,.99);
+    transition: all .7s cubic-bezier(0, 0, 0, .99);
     -ms-transform: scale(.95);
     transform: scale(.95);
     vertical-align: middle;
     width: 100%;
-    will-change: border-radius,transform,opacity
+    will-change: border-radius, transform, opacity
 }
 
 .popin.active .popin-content {
     border-radius: 0;
     opacity: 1;
-    transition: all .5s cubic-bezier(0,0,0,.99);
+    transition: all .5s cubic-bezier(0, 0, 0, .99);
     -ms-transform: scale(1);
     transform: scale(1)
 }
 
+.form-line {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 25px;
+
+    br {
+        display: none;
+    }
+    input, select, textarea {
+        width: 100%;
+    }
+
+    .wpcf7-form-control-wrap {
+        flex-basis: 47%;
+    }
+
+    &.form-date {
+        flex-direction: column;
+    }
+
+    &.form-textarea {
+        padding-top: 25px;
+
+        textarea {
+            height: 130px;
+        }
+        .wpcf7-form-control-wrap {
+            flex-basis: 100%;
+        }
+    }
+
+    &.form-email {
+        .wpcf7-form-control-wrap {
+            flex-basis: 70%;
+        }
+    }
+
+    &.form-submit {
+        .post-url {
+            display: none;;
+        }
+    }
+}
+
+.popin-title {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 40px;
+    font-size: 36px;
+    letter-spacing: 6px;
+    padding-bottom: 40px;
+}
 
 .popin-close {
     bottom: 0;

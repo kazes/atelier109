@@ -31,6 +31,20 @@ Use it to make something cool, have fun, and share what you've learned with othe
     box-sizing: border-box;
 }
 
+/* STRUCTURE */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    height: 100%;
+    line-height: 20px;
+    color: #000;
+    background: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
 input {
     height: auto;
 }
@@ -39,34 +53,19 @@ a img, fieldset, form {
     border: 0;
 }
 
-ins, abbr, acronym {
-    text-decoration: none;
-    border: 0;
-    font-style: normal;
-}
-
-a:hover ins, a:hover abbr, a:hover acronym {
-    text-decoration: underline;
-}
-
-address {
-    font-style: normal;
-}
-
 ul {
     list-style: none;
 }
 
-q:before, q:after {
-    content: '';
-}
-
-small {
-    font-size: 0.9em;
-}
 
 input, select, textarea, button {
-    font: 1em Arial, Verdana, Helvetica, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 5px 5px;
+    border: 1px solid black;
 }
 
 input, textarea, select {
@@ -96,27 +95,13 @@ button::-moz-focus-inner {
     padding: 0;
 }
 
-input.submit {
+input[type=submit] {
     width: auto !important;
     height: auto !important;
     cursor: pointer !important;
     border: 0 !important;
     overflow: visible;
 }
-
-/* STRUCTURE */
-body {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    height: 100%;
-    line-height: 20px;
-    color: #000;
-    background: #fff;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
 /* PAGE */
 #page {
     position: relative;
