@@ -1,6 +1,6 @@
-
 @import 'popin';
 @import 'icons';
+@import 'header';
 @import 'contact-form';
 
 /*
@@ -45,7 +45,6 @@ body {
     text-transform: uppercase;
 }
 
-
 input {
     height: auto;
 }
@@ -57,7 +56,6 @@ a img, fieldset, form {
 ul {
     list-style: none;
 }
-
 
 input, select, textarea, button {
     font-family: 'Josefin Sans', sans-serif;
@@ -103,6 +101,7 @@ input[type=submit] {
     border: 0 !important;
     overflow: visible;
 }
+
 /* PAGE */
 #page {
     position: relative;
@@ -113,6 +112,10 @@ input[type=submit] {
 #content {
     padding-left: 20px;
     padding-right: 20px;
+
+    .home & {
+        padding: 0;
+    }
 }
 
 a {
@@ -142,6 +145,11 @@ a:hover {
     font-size: 16px;
 }
 
+.button-bigger {
+    padding: 16px 20px;
+    font-size: 20px;
+}
+
 .button:hover {
     color: white;
     text-decoration: none;
@@ -151,45 +159,9 @@ a:hover {
     background-color: #d50058;
 }
 
-/* HEADER */
-#masthead {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    left: 0;
-}
-
-.header-content {
-    padding-top: 16px;
-    position: relative;
-    max-width: 1280px;
-    margin: auto;
-
-}
-
-.menu {
-    position: absolute;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.menu li {
-    padding-bottom: 5px;
-}
-
-.menu-categories {
-    left: 0;
-}
-
-.menu-contact {
-    right: 0;
-    text-align: right;
-}
-
 /* TEMPLATES */
 .single-template,
-.page-template{
+.page-template {
     padding-top: 75px;
 }
 
@@ -299,7 +271,6 @@ a:hover {
     line-height: 29px;
 }
 
-
 .button-back {
     display: inline-block;
     margin-bottom: 14px;
@@ -323,7 +294,58 @@ a:hover {
     text-decoration: none;
 }
 
+/* HOME INDEX */
+.page-index {
+    .cover {
+        position: relative;
+
+        &:last-child {
+            overflow: hidden;
+        }
+        .pattern {
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+        .image {
+            position: relative;
+            z-index: 1;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        .layout {
+            text-align: center;
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .title {
+            font-size: 60px;
+            letter-spacing: 4px;
+            padding-bottom: 26px;
+            line-height: 70px;
+            color: white;
+            font-weight: 200;
+        }
+        .button {
+
+        }
+    }
+}
+
 /* FOOTER */
 .site-footer {
     padding-bottom: 100px;
+
+    .home & {
+        padding-bottom: 0;
+    }
 }

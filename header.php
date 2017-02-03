@@ -22,7 +22,7 @@
     <?php wp_head(); ?>
 
     <!-- google font "Josefin Sans" -->
-    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600,700,400italic,500italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,600' rel='stylesheet' type='text/css'>
     <!-- google font "Crimson Text" -->
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet">
 
