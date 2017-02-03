@@ -153,7 +153,7 @@ get_header(); ?>
                         </span>
 
                         <!-- TITLE -->
-                        <h1 class="popin-title">
+                        <h1 class="title">
                             Votre création atelier 109 est réalisée sur-mesure
                         </h1>
 

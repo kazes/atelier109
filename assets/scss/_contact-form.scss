@@ -1,0 +1,68 @@
+
+.intro {
+    letter-spacing: 0;
+    font-family: 'Crimson Text', serif;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 20px;
+}
+.contact-container {
+    display: flex;
+
+    .thumbnail {
+        padding-top: 2px;
+
+        img {
+            margin-right: 50px;
+        }
+    }
+
+    .message {
+    }
+}
+
+.form-line {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 25px;
+
+    br {
+        display: none;
+    }
+    input, select, textarea {
+        width: 100%;
+    }
+
+    .wpcf7-form-control-wrap {
+        flex-basis: 47%;
+    }
+
+    &.form-date {
+        flex-direction: column;
+    }
+
+    &.form-textarea {
+        padding-top: 25px;
+
+        textarea {
+            height: 130px;
+        }
+        .wpcf7-form-control-wrap {
+            flex-basis: 100%;
+        }
+    }
+
+    &.form-email {
+        .wpcf7-form-control-wrap {
+            flex-basis: 70%;
+        }
+    }
+
+    &.form-submit {
+        .post-url {
+            display: none;;
+        }
+    }
+}

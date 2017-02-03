@@ -5,194 +5,109 @@
     right: 100%;
     visibility: hidden;
     z-index: -1;
-    transition: z-index 0ms 1s
-}
-
-.popin, .popin .mask {
+    transition: z-index 0ms 1s;
     bottom: 0;
     left: 0;
-    top: 0
-}
+    top: 0;
 
-.popin .mask {
-    background: transparent;
-    content: "";
-    position: absolute;
-    right: 0;
-    transition: all .5s cubic-bezier(0, 0, 0, .99);
-    will-change: background
-}
-
-.popin.active {
-    visibility: visible;
-    z-index: 105;
-    transition: z-index 0ms;
-    right: 0
-}
-
-.popin.active .mask {
-    background: rgba(0, 0, 0, .8)
-}
-
-.popin .btn-close {
-    right: 1%;
-    top: 15px;
-    border: 1px solid #a0a0a0
-}
-
-.popin .content-scroll {
-    overflow: auto;
-    height: 100%;
-    pointer-events: none;
-    position: relative
-}
-
-.popin .content-scroll.no-pdt {
-    padding-top: 0
-}
-
-.contact-container {
-    display: flex;
-
-    .thumbnail {
-        padding-top: 2px;
-
-        img {
-            margin-right: 50px;
-        }
+    &.active {
+        visibility: visible;
+        z-index: 105;
+        transition: z-index 0ms;
+        right: 0;
     }
 
-    .message {
+    .mask {
+        background: transparent;
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        transition: all .5s cubic-bezier(0, 0, 0, .99);
+        will-change: background
     }
-}
 
-.popin .content-wrapper {
-    display: table;
-    height: 100%;
-    width: 100%
-}
-
-.popin .intro {
-    letter-spacing: 0;
-    font-family: 'Crimson Text', serif;
-    text-transform: none;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 16px;
-    padding-bottom: 20px;
-}
-.popin .popin-ground {
-    background: #fff;
-    pointer-events: all;
-    margin: 0 auto;
-    padding: 43px 50px;
-    text-align: left;
-    position: relative;
-
-    width: 80vw;
-    min-height: 394px;
-
-    height: auto !important
-}
-
-.popin-content {
-    display: table-cell;
-    border-radius: 20px;
-    margin: auto;
-    opacity: 0;
-    overflow: hidden;
-    text-align: center;
-    transition: all .7s cubic-bezier(0, 0, 0, .99);
-    -ms-transform: scale(.95);
-    transform: scale(.95);
-    vertical-align: middle;
-    width: 100%;
-    will-change: border-radius, transform, opacity
-}
-
-.popin.active .popin-content {
-    border-radius: 0;
-    opacity: 1;
-    transition: all .5s cubic-bezier(0, 0, 0, .99);
-    -ms-transform: scale(1);
-    transform: scale(1)
-}
-
-.form-line {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 25px;
-
-    br {
-        display: none;
+    &.active .mask {
+        background: rgba(0, 0, 0, .8)
     }
-    input, select, textarea {
+
+    .content-scroll {
+        overflow: auto;
+        height: 100%;
+        pointer-events: none;
+        position: relative
+    }
+
+    .content-wrapper {
+        display: table;
+        height: 100%;
+        width: 100%
+    }
+    .popin-ground {
+        background: #fff;
+        pointer-events: all;
+        margin: 0 auto;
+        padding: 43px 50px;
+        text-align: left;
+        position: relative;
+        width: 80vw;
+        min-height: 394px;
+        max-width: 960px;
+        height: auto !important
+    }
+
+    .popin-content {
+        display: table-cell;
+        border-radius: 20px;
+        margin: auto;
+        opacity: 0;
+        overflow: hidden;
+        text-align: center;
+        transition: all .7s cubic-bezier(0, 0, 0, .99);
+        -ms-transform: scale(.95);
+        transform: scale(.95);
+        vertical-align: middle;
         width: 100%;
+        will-change: border-radius, transform, opacity
     }
 
-    .wpcf7-form-control-wrap {
-        flex-basis: 47%;
+    &.active .popin-content {
+        border-radius: 0;
+        opacity: 1;
+        transition: all .5s cubic-bezier(0, 0, 0, .99);
+        -ms-transform: scale(1);
+        transform: scale(1)
     }
 
-    &.form-date {
-        flex-direction: column;
+    .title {
+        font-family: 'Josefin Sans', sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height: 40px;
+        font-size: 36px;
+        letter-spacing: 6px;
+        padding-bottom: 40px;
     }
+    
+    .popin-close {
+        bottom: 0;
+        color: #202020;
+        cursor: pointer;
+        height: 15px;
+        line-height: .7;
+        padding: 0;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 15px;
 
-    &.form-textarea {
-        padding-top: 25px;
-
-        textarea {
-            height: 130px;
+        .icon-close-menu {
+            margin: 0
         }
-        .wpcf7-form-control-wrap {
-            flex-basis: 100%;
+        .icon-close:before {
+            font-size: 20px
         }
     }
-
-    &.form-email {
-        .wpcf7-form-control-wrap {
-            flex-basis: 70%;
-        }
-    }
-
-    &.form-submit {
-        .post-url {
-            display: none;;
-        }
-    }
-}
-
-.popin-title {
-    font-family: 'Josefin Sans', sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    line-height: 40px;
-    font-size: 36px;
-    letter-spacing: 6px;
-    padding-bottom: 40px;
-}
-
-.popin-close {
-    bottom: 0;
-    color: #202020;
-    cursor: pointer;
-    height: 15px;
-    line-height: .7;
-    padding: 0;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    width: 15px
-}
-
-.popin-close .icon-close-menu {
-    margin: 0
-}
-
-.popin-close .icon-close-menu:before {
-    font-size: 20px
-}
-
-.open-popin {
-    cursor: pointer
 }
