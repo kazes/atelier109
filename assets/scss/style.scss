@@ -187,9 +187,10 @@ a:hover {
     text-align: right;
 }
 
-/* SINGLE */
-.single {
-    padding-top: 40px;
+/* TEMPLATES */
+.single-template,
+.page-template{
+    padding-top: 75px;
 }
 
 .post-container {
@@ -208,6 +209,12 @@ a:hover {
 
 .post-content {
     width: 60.4%;
+    display: flex;
+    flex-direction: row;
+
+    .page-template & {
+        display: block;
+    }
 }
 
 .next-post-container {
@@ -283,7 +290,8 @@ a:hover {
     align-self: flex-start;
 }
 
-.post-title {
+.post-title,
+.entry-title {
     font-size: 24px;
     letter-spacing: 4px;
     font-weight: 600;
@@ -291,10 +299,6 @@ a:hover {
     line-height: 29px;
 }
 
-.post-content {
-    display: flex;
-    flex-direction: row;
-}
 
 .button-back {
     display: inline-block;

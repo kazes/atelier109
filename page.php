@@ -17,24 +17,29 @@
 
 get_header(); ?>
 
-    <div class="wrap">
+    <div class="wrap page-template">
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
-                <h1>
-                    page
-                </h1>
-                <?php
-                while (have_posts()) : the_post();
+                <div class="post-container">
+                    <div class="nav-container"></div>
+                    <div class="post-content">
+                        <?php include('inc/back-to-home.inc.php'); ?>
+                        <?php
+                        while (have_posts()) : the_post();
 
-                    get_template_part('template-parts/page/content', 'page');
+                            get_template_part('template-parts/page/content', 'page');
 
-                    // If comments are open or we have at least one comment, load up the comment template.
-                    if (comments_open() || get_comments_number()) :
-                        comments_template();
-                    endif;
+                            // If comments are open or we have at least one comment, load up the comment template.
+                            if (comments_open() || get_comments_number()) :
+                                comments_template();
+                            endif;
 
-                endwhile; // End of the loop.
-                ?>
+                        endwhile; // End of the loop.
+                        ?>
+                    </div>
+                    <div class="nav-container"></div>
+                </div>
+
 
             </main><!-- #main -->
         </div><!-- #primary -->

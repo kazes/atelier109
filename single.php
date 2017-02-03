@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-    <div class="wrap single">
+    <div class="wrap single-template">
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
 
@@ -80,9 +80,7 @@ get_header(); ?>
                         <div class="post-content">
                             <!-- IMAGE POST -->
                             <div class="image-container">
-                                <a href="/" class="button-back">
-                                    &lt; retour à l'accueil
-                                </a>
+                                <?php include('inc/back-to-home.inc.php'); ?>
                                 <div class="image-post">
                                     <div class="pattern"></div>
                                     <?php echo $post_image; ?>
