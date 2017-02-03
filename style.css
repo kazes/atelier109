@@ -154,7 +154,7 @@
 /* HEADER */
 #masthead {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     right: 0;
     left: 0;
@@ -569,6 +569,7 @@ a:hover {
 /* HOME INDEX */
 .page-index .cover {
     position: relative;
+    z-index: 1;
 }
 
 .page-index .cover:last-child {

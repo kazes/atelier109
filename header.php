@@ -35,12 +35,37 @@
     <header id="masthead" class="site-header" role="banner">
         <div class="header-content">
             <ul class="menu menu-categories">
-                <?php wp_list_categories(array(
-                    // todo order by custom
-                    'title_li' => __(''), // title
+                <?php
+
+                //for each category, show 5 posts
+                $cat_args = array(
                     'orderby' => 'name',
-                    'show_count' => false
-                )); ?>
+                    'order' => 'ASC'
+                );
+                $categories = get_categories($cat_args);
+
+                foreach ($categories as $category) {
+                    $post_args = array(
+                        'showposts' => 1,
+                        'category__in' => array($category->term_id),
+                        'caller_get_posts' => 1
+                    );
+
+                    $posts = get_posts($post_args);
+
+                    if ($posts) {
+                        foreach ($posts as $post) {
+                            setup_postdata($post); ?>
+                            <li>
+                                <a href="<?php the_permalink() ?>">
+                                    <?php echo $category->name; ?>
+                                </a>
+                            </li>
+                            <?php
+                        } // foreach($posts
+                    } // if ($posts
+                } // foreach($categories
+                ?>
             </ul>
 
             <ul class="menu menu-contact">
@@ -54,19 +79,18 @@
                         facebook
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        biographie
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        contact
-                    </a>
-                </li>
+                <?php
+                $pages = get_pages();
+                foreach ($pages as $page) {
+                    ?>
+                    <li>
+                        <a href="<?php echo get_page_link($page->ID); ?>">
+                            <?php echo $page->post_title; ?>
+                        </a>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
-
     </header><!-- #masthead -->
 
 
