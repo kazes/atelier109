@@ -22,9 +22,9 @@ get_header(); ?>
 
                 // find index number of the post in its category
                 $post_index = 0;
-                foreach ($all_posts as $p){
+                foreach ($all_posts as $p) {
                     $post_index++;
-                    if($p->ID === $post->ID){
+                    if ($p->ID === $post->ID) {
                         break;
                     }
                 }
@@ -33,11 +33,12 @@ get_header(); ?>
                 wp_reset_query();
 
                 // pan to (add extra zeros)
-                if(strlen(strval($post_index)) < 2){
+                if (strlen(strval($post_index)) < 2) {
                     $post_index = "0" . strval($post_index);
                 }
 
-                function getAttachedImageFromPost($the_post, $format = 'thumbnail'){
+                function getAttachedImageFromPost($the_post, $format = 'thumbnail')
+                {
                     $post_attachments = get_posts(array(
                         'post_type' => 'attachment',
                         'numberposts' => -1,
@@ -69,7 +70,7 @@ get_header(); ?>
                             <div class="nav-link prev-post-link">
                                 <?php
                                 $prev_post = get_previous_post(true);
-                                if($prev_post){
+                                if ($prev_post) {
                                     $prev_post_image = getAttachedImageFromPost($prev_post);
                                     previous_post_link('%link', '<span class="arrow icon-prev"></span>' . $prev_post_image, true);
                                 }
@@ -85,9 +86,9 @@ get_header(); ?>
                                     <div class="pattern"></div>
                                     <?php echo $post_image; ?>
                                 </div>
-                                <a href="#" class="button JS_toggler" data-toggler-group="popin" data-toggler-id="popin-more">
+                                <!-- <a href="#" class="button JS_toggler" data-toggler-group="popin" data-toggler-id="popin-more">
                                     more details
-                                </a>
+                                </a>-->
                             </div>
 
                             <!-- TEXT CONTENT -->
@@ -95,6 +96,7 @@ get_header(); ?>
                                 <div class="post-number">
                                     &lt;<?php echo $post_index; ?>&gt;
                                 </div>
+                                <!--
                                 <h1 class="post-title">
                                     <?php the_title(); ?>
                                 </h1>
@@ -102,8 +104,8 @@ get_header(); ?>
                                 <div class="the-content">
                                     <?php the_content(); ?>
                                 </div>
-
-                                <a href="#" class="button button-big bg-2">
+                                -->
+                                <a href="#" class="button button-big bg-2 JS_toggler" data-toggler-group="popin" data-toggler-id="popin-more">
                                     commander
                                 </a>
                             </div>
@@ -114,7 +116,7 @@ get_header(); ?>
                             <div class="nav-link next-post-link">
                                 <?php
                                 $next_post = get_next_post(true);
-                                if($next_post){
+                                if ($next_post) {
                                     $next_post_image = getAttachedImageFromPost($next_post);
                                     next_post_link('%link', '<span class="arrow icon-next"></span>' . $next_post_image, true);
                                 }
@@ -162,10 +164,11 @@ get_header(); ?>
 
                             <div class="message">
                                 <p class="intro">
-                                    Parlez moi de vos envies de couleurs et de tissus. Je vous enverrai une proposition personnalisée.
+                                    Parlez moi de vos envies de couleurs et de tissus. Je vous enverrai une proposition
+                                    personnalisée.
                                 </p>
                                 <!-- FORM -->
-                                <?php echo do_shortcode( '[contact-form-7 id="49" title="Contact form 1"]' ); ?>
+                                <?php echo do_shortcode('[contact-form-7 id="49" title="Contact form 1"]'); ?>
                             </div>
 
                         </div>

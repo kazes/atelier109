@@ -107,6 +107,10 @@ input[type=submit] {
     position: relative;
     max-width: 1280px;
     margin: auto;
+
+    .home & {
+        max-width: none;
+    }
 }
 
 #content {

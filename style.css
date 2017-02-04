@@ -366,6 +366,10 @@ input[type=submit] {
     margin: auto;
 }
 
+.home #page {
+    max-width: none;
+}
+
 #content {
     padding-left: 20px;
     padding-right: 20px;
