@@ -18,7 +18,7 @@ get_header(); ?>
 
                 <?php
                 $cat_name = get_the_category($post->ID)[0]->cat_name;
-                $all_posts = query_posts('post_type=post&orderby=date&order=ASC&category_name=' . $cat_name);
+                $all_posts = query_posts('posts_per_page=-1&post_type=post&orderby=date&order=ASC&category_name=' . $cat_name);
 
                 // find index number of the post in its category
                 $post_index = 0;
