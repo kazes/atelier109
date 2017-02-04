@@ -35,6 +35,11 @@
     <header id="masthead" class="site-header" role="banner">
         <div class="header-content">
             <ul class="menu menu-categories">
+                <li>
+                    <a href="/">
+                        accueil
+                    </a>
+                </li>
                 <?php
 
                 //for each category, show 5 posts
@@ -51,13 +56,16 @@
                         'caller_get_posts' => 1
                     );
 
-                    $posts = get_posts($post_args);
+                    $header_posts = get_posts($post_args);
 
-                    if ($posts) {
-                        foreach ($posts as $post) {
-                            setup_postdata($post); ?>
+
+                    if ($header_posts) {
+                        foreach ($header_posts as $header_post) {
+
+                            //print_r($header_post);
+                            //setup_postdata($header_post); ?>
                             <li>
-                                <a href="<?php the_permalink() ?>">
+                                <a href="<?php echo $header_post->guid ?>">
                                     <?php echo $category->name; ?>
                                 </a>
                             </li>
@@ -70,16 +78,17 @@
 
             <ul class="menu menu-contact">
                 <li>
-                    <a href="#">
+                    <a href="https://www.instagram.com/atelier109paris/" title="atelier109paris" target="_blank">
                         instagram
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="https://www.facebook.com/alexgastaut/" target="_blank">
                         facebook
                     </a>
                 </li>
                 <?php
+                // other pages
                 $pages = get_pages();
                 foreach ($pages as $page) {
                     ?>

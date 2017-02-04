@@ -18,23 +18,6 @@
 get_header(); ?>
 
     <div class="wrap page-index">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <?php
 
         $button_text = array(
