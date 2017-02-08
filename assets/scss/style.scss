@@ -238,21 +238,30 @@ a:hover {
 
 .image-post {
     position: relative;
+    overflow: hidden;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1;
+        transition: transform 2000ms cubic-bezier(.19, 1, .22, 1) 0ms;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: transform 2000ms cubic-bezier(.215, .61, .355, 1) 0ms;
+        }
+    }
+    .pattern {
+        position: absolute;
+        bottom: -13px;
+        z-index: 2;
+        left: 0;
+        right: 0;
+    }
 }
 
-.image-post img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.image-post .pattern {
-    position: absolute;
-    bottom: -13px;
-    left: 0;
-    right: 0;
-}
 
 .content-container {
     width: 46.6%;
