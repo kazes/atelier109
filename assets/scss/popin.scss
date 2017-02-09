@@ -36,7 +36,7 @@
     .content-scroll {
         overflow: auto;
         height: 100%;
-        pointer-events: none;
+        //pointer-events: none; // prevents scrolling :(
         position: relative
     }
 
@@ -90,18 +90,18 @@
         letter-spacing: 6px;
         padding-bottom: 40px;
     }
-    
+
     .popin-close {
         bottom: 0;
         color: #202020;
         cursor: pointer;
         height: 15px;
+        width: 15px;
         line-height: .7;
         padding: 0;
         position: absolute;
         right: 20px;
-        top: 20px;
-        width: 15px;
+        top: 14px;
 
         .icon-close-menu {
             margin: 0

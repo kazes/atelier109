@@ -82,7 +82,7 @@ get_header(); ?>
                             <!-- IMAGE POST -->
                             <div class="image-container">
                                 <?php include('inc/back-to-home.inc.php'); ?>
-                                <div class="image-post">
+                                <div class="image-post JS_toggler" data-toggler-group="popin" data-toggler-id="popin-gallery">
                                     <div class="pattern"></div>
                                     <?php echo $post_image; ?>
                                 </div>
@@ -135,6 +135,41 @@ get_header(); ?>
         </div><!-- #primary -->
     </div><!-- .wrap -->
 
+
+    <!-- POPIN GALLERY -->
+    <!-- params ($popin_name='popin-gallery')-->
+    <div class="popin active popin-gallery JS_item_toggler" data-toggler-itemid="popin-gallery" data-toggler-group="popin">
+
+        <!-- MASK -->
+        <div class="mask JS_toggler active" data-toggler-id="popin-gallery" data-toggler-group="popin" data-toggler-action="close"></div>
+
+        <!-- POPIN CONTENT -->
+        <div class="content-scroll">
+            <div class="content-wrapper">
+                <div class="popin-content">
+                    <div class="popin-ground">
+                        <!-- CLOSE -->
+                        <span class="popin-close JS_toggler active" data-toggler-id="popin-gallery" data-toggler-group="popin" data-toggler-action="close">
+                            <i class="icon-close"></i>
+                        </span>
+
+
+                        <div class="owl-carousel images-list">
+                            <?php
+                            if ($attachments) {
+                                foreach ($attachments as $attachment) {
+                                    echo wp_get_attachment_image($attachment->ID, 'large');
+                                }
+                            }
+                            ?>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- POPIN CONTACT -->
     <div class="popin JS_item_toggler" data-toggler-itemid="popin-more" data-toggler-group="popin">

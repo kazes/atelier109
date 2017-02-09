@@ -2,6 +2,8 @@
 @import 'icons';
 @import 'header';
 @import 'contact-form';
+@import 'owl.carousel';
+@import 'owl.theme.default';
 
 /*
 Theme Name: atelier109.fr
@@ -207,14 +209,15 @@ a:hover {
     display: block;
     position: relative;
 }
-
+.arrow {
+    font-size: 20px;
+    color: white;
+    transform: translate(-50%, -50%);
+}
 .nav-link .arrow {
     position: absolute;
     top: 50%;
     left: 67%;
-    font-size: 20px;
-    color: white;
-    transform: translate(-50%, -50%);
 }
 
 .next-post-link {
@@ -223,6 +226,41 @@ a:hover {
 
 .next-post-link .arrow {
     left: 35%;
+}
+
+/* POPIN GALLERY */
+.popin-gallery {
+    .owl-nav {
+        pointer-events: none;
+        position: absolute;
+        left: -30px;
+        right: -30px;
+        top: 50%;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+
+        .owl-next, .owl-prev {
+            pointer-events: all;
+            transition: opacity 300ms ease;
+        }
+
+        .arrow {
+            color: #000;
+        }
+        .disabled {
+            opacity: 0;
+            pointer-events: none
+        }
+    }
+}
+
+.images-list {
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 }
 
 /* POST CONTENT */
@@ -261,7 +299,6 @@ a:hover {
         right: 0;
     }
 }
-
 
 .content-container {
     width: 46.6%;
