@@ -138,10 +138,10 @@ get_header(); ?>
 
     <!-- POPIN GALLERY -->
     <!-- params ($popin_name='popin-gallery')-->
-    <div class="popin active popin-gallery JS_item_toggler" data-toggler-itemid="popin-gallery" data-toggler-group="popin">
+    <div class="popin popin-gallery JS_item_toggler" data-toggler-itemid="popin-gallery" data-toggler-group="popin">
 
         <!-- MASK -->
-        <div class="mask JS_toggler active" data-toggler-id="popin-gallery" data-toggler-group="popin" data-toggler-action="close"></div>
+        <div class="mask JS_toggler" data-toggler-id="popin-gallery" data-toggler-group="popin" data-toggler-action="close"></div>
 
         <!-- POPIN CONTENT -->
         <div class="content-scroll">
@@ -149,7 +149,7 @@ get_header(); ?>
                 <div class="popin-content">
                     <div class="popin-ground">
                         <!-- CLOSE -->
-                        <span class="popin-close JS_toggler active" data-toggler-id="popin-gallery" data-toggler-group="popin" data-toggler-action="close">
+                        <span class="popin-close JS_toggler" data-toggler-id="popin-gallery" data-toggler-group="popin" data-toggler-action="close">
                             <i class="icon-close"></i>
                         </span>
 
@@ -175,7 +175,7 @@ get_header(); ?>
     <div class="popin JS_item_toggler" data-toggler-itemid="popin-more" data-toggler-group="popin">
 
         <!-- MASK -->
-        <div class="mask JS_toggler active" data-toggler-id="popin-more" data-toggler-group="popin" data-toggler-action="close"></div>
+        <div class="mask JS_toggler" data-toggler-id="popin-more" data-toggler-group="popin" data-toggler-action="close"></div>
 
         <!-- POPIN CONTENT -->
         <div class="content-scroll">
@@ -183,7 +183,7 @@ get_header(); ?>
                 <div class="popin-content">
                     <div class="popin-ground">
                         <!-- CLOSE -->
-                        <span class="popin-close JS_toggler active" data-toggler-id="popin-more" data-toggler-group="popin" data-toggler-action="close">
+                        <span class="popin-close JS_toggler" data-toggler-id="popin-more" data-toggler-group="popin" data-toggler-action="close">
                             <i class="icon-close"></i>
                         </span>
 
