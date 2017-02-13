@@ -68,11 +68,12 @@ get_header(); ?>
                     <div class="post-container">
                         <div class="nav-container prev-post-container">
                             <div class="nav-link prev-post-link">
+
                                 <?php
-                                $prev_post = get_previous_post(true);
-                                if ($prev_post) {
-                                    $prev_post_image = getAttachedImageFromPost($prev_post);
-                                    previous_post_link('%link', '<span class="arrow icon-prev"></span>' . $prev_post_image, true);
+                                $next_post = get_next_post(true);
+                                if ($next_post) {
+                                    $next_post_image = getAttachedImageFromPost($next_post);
+                                    next_post_link('%link', '<span class="arrow icon-prev"></span>' . $next_post_image, true);
                                 }
                                 ?>
                             </div>
@@ -86,9 +87,9 @@ get_header(); ?>
                                     <div class="pattern"></div>
                                     <?php echo $post_image; ?>
                                 </div>
-                                <!-- <a href="#" class="button JS_toggler" data-toggler-group="popin" data-toggler-id="popin-more">
+                                <a href="#" class="button JS_toggler" data-toggler-group="popin" data-toggler-id="popin-gallery">
                                     more details
-                                </a>-->
+                                </a>
                             </div>
 
                             <!-- TEXT CONTENT -->
@@ -96,7 +97,7 @@ get_header(); ?>
                                 <div class="post-number">
                                     &lt;<?php echo $post_index; ?>&gt;
                                 </div>
-                                <!--
+
                                 <h1 class="post-title">
                                     <?php the_title(); ?>
                                 </h1>
@@ -104,7 +105,7 @@ get_header(); ?>
                                 <div class="the-content">
                                     <?php the_content(); ?>
                                 </div>
-                                -->
+
                                 <a href="#" class="button button-big bg-2 JS_toggler" data-toggler-group="popin" data-toggler-id="popin-more">
                                     commander
                                 </a>
@@ -115,10 +116,10 @@ get_header(); ?>
                         <div class="nav-container next-post-container">
                             <div class="nav-link next-post-link">
                                 <?php
-                                $next_post = get_next_post(true);
-                                if ($next_post) {
-                                    $next_post_image = getAttachedImageFromPost($next_post);
-                                    next_post_link('%link', '<span class="arrow icon-next"></span>' . $next_post_image, true);
+                                $prev_post = get_previous_post(true);
+                                if ($prev_post) {
+                                    $prev_post_image = getAttachedImageFromPost($prev_post);
+                                    previous_post_link('%link', '<span class="arrow icon-next"></span>' . $prev_post_image, true);
                                 }
                                 ?>
                             </div>

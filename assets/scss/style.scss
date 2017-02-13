@@ -209,11 +209,13 @@ a:hover {
     display: block;
     position: relative;
 }
+
 .arrow {
     font-size: 20px;
     color: white;
     transform: translate(-50%, -50%);
 }
+
 .nav-link .arrow {
     position: absolute;
     top: 50%;
@@ -277,6 +279,7 @@ a:hover {
 .image-post {
     position: relative;
     overflow: hidden;
+    margin-bottom: 20px;
 
     img {
         display: block;
