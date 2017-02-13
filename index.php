@@ -60,9 +60,9 @@ get_header(); ?>
                         </div>
                     </div>
                     <?php
-                } // foreach($posts
-            } // if ($posts
-        } // foreach($categories
+                }
+            }
+        }
         ?>
 
     </div><!-- .wrap -->
