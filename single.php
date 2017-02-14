@@ -88,7 +88,7 @@ get_header(); ?>
                                     <?php echo $post_image; ?>
                                 </div>
                                 <a href="#" class="button JS_toggler" data-toggler-group="popin" data-toggler-id="popin-gallery">
-                                    more details
+                                    <?php echo __('[:fr]En détails[:en]More details[:es]More details'); ?>
                                 </a>
                             </div>
 
@@ -107,7 +107,7 @@ get_header(); ?>
                                 </div>
 
                                 <a href="#" class="button button-big bg-2 JS_toggler" data-toggler-group="popin" data-toggler-id="popin-more">
-                                    commander
+                                    <?php echo __('[:fr]Commander[:en]Order[:es]Order'); ?>
                                 </a>
                             </div>
                         </div>

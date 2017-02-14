@@ -1,3 +1,3 @@
 <a href="/" class="button-back">
-    &lt; retour à l'accueil
+    &lt; <?php echo __('[:fr]retour à l\'accueil[:en]Back to homepage[:es]Back to homepage'); ?>
 </a>

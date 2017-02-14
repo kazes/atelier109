@@ -37,7 +37,7 @@
             <ul class="menu menu-categories">
                 <li>
                     <a href="/">
-                        accueil
+                        <?php echo __('[:fr]Accueil[:en]Home[:es]Home'); ?>
                     </a>
                 </li>
                 <?php
@@ -98,7 +98,12 @@
                         </a>
                     </li>
                 <?php } ?>
+                <li>
+                    <!-- languages -->
+                    <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
+                </li>
             </ul>
+
         </div>
     </header><!-- #masthead -->
 

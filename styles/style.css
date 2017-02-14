@@ -158,30 +158,34 @@
 	left: 0;
 }
 
-.header-content {
+#masthead .header-content {
 	padding-top: 16px;
 	position: relative;
 	max-width: 1280px;
 	margin: auto;
 }
 
-.menu {
+#masthead .menu {
 	position: absolute;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
-.menu li {
+#masthead .menu li {
 	padding-bottom: 5px;
 }
 
-.menu-categories {
+#masthead .menu-categories {
 	left: 0;
 }
 
-.menu-contact {
+#masthead .menu-contact {
 	right: 0;
 	text-align: right;
+}
+
+#masthead .language-chooser {
+	padding-top: 20px;
 }
 
 .home .menu a {
@@ -822,6 +826,7 @@ a:hover {
 }
 
 .image-post {
+	cursor: pointer;
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 20px;
