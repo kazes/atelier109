@@ -799,10 +799,15 @@ a:hover {
     pointer-events: none;
 }
 
-.images-list img {
-    width: 100%;
-    height: auto;
-    display: block;
+.images-list .owl-item {
+    height: 80vh;
+}
+
+.images-list .image-cover {
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* POST CONTENT */

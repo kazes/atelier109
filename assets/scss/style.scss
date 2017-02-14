@@ -258,10 +258,14 @@ a:hover {
 }
 
 .images-list {
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
+    .owl-item {
+        height: 80vh;
+    }
+    .image-cover {
+        height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }
 

@@ -159,7 +159,7 @@ get_header(); ?>
                             <?php
                             if ($attachments) {
                                 foreach ($attachments as $attachment) {
-                                    echo wp_get_attachment_image($attachment->ID, 'large');
+                                    echo '<div class="image-cover" style="background-image: url('.wp_get_attachment_image_src($attachment->ID, "large")[0].')"></div>';
                                 }
                             }
                             ?>
